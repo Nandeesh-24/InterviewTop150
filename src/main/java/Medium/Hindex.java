@@ -10,23 +10,19 @@ public class Hindex {
      */
 
     public static void main(String[] args) {
-        System.out.println(hIndex(new int[]{11,12}));
+        System.out.println(hIndex(new int[]{3,0,6,1,5}));
     }
 
     public static int hIndex(int[] citations) {
-        if (citations.length == 1 && citations[0] > 0)
-            return 1;
-        citations = Arrays.stream(citations).sorted().toArray();//0,2,3,5
-        int hindex = 0;
-        for (int i = 0; i < citations.length; i++){
-            if (citations[i] > 0 && citations[i] > hindex){
-                if (citations[i] <= (citations.length - i))
-                    hindex = citations[i];
-                else if (hindex + 1 <= citations.length-i)
-                    hindex++;
-
+        Arrays.sort(citations);//0,1,3,5,6
+        int h=0;
+        for(int i=citations.length-1;i>=0;i--){
+            // System.out.println(h+" - "+citations[i]);
+            if(h+1 > citations[i]){
+                return h;
             }
+            h++;
         }
-        return hindex;
+        return h;
     }
 }
