@@ -1,4 +1,4 @@
-package Medium;
+package ArrayString.Medium;
 
 public class BestTimeToBuySellStock2 {
     /*

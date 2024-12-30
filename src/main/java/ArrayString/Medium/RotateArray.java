@@ -1,4 +1,4 @@
-package Medium;
+package ArrayString.Medium;
 
 import java.util.Arrays;
 

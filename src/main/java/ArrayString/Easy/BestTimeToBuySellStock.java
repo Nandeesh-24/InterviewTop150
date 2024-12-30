@@ -1,4 +1,4 @@
-package Easy;
+package ArrayString.Easy;
 
 public class BestTimeToBuySellStock {
     /*
